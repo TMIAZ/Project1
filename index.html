@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing list</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="packList">
+    <h1>Packing list</h1>
+ 
+    <div class="addItem">
+      <input type="text" id="itemInput" placeholder="Item to be packed">
+      <div class="needPurchase">
+        <label><input type="checkbox" id="purchaseCheckbox"> Need to purchase!</label>
+      </div>
+      <button onclick="addItem()">Add item</button>
+      <p id="error-message" style="color: red; display: none;">Please check the item</p>
+    </div>
+
+    <div class="listContainer">
+        <button onclick="toggleList('purchaseListContainer')">To be purchased</button>
+        <div id="purchaseListContainer" class="collapsible" style="display: none;">
+            <h2>Items to be purchased:</h2>
+            <ul id="purchaseList"></ul>
+        </div>
+    </div>
+
+    <div class="listContainer">
+        <h2>To be packed:</h2>
+        <ul id="packingList"></ul>
+    </div>
+
+    <div class="listContainer">
+        <button onclick="toggleList('packedListContainer')">Packaged items</button>
+        <div id="packedListContainer" class="collapsible" style="display: none;">
+            <h2>Packed items:</h2>
+            <ul id="packedList"></ul>
+            <button class="clear-button" onclick="clearPackedList()">Empty list</button>
+        </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
